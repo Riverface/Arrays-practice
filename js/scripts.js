@@ -1,12 +1,12 @@
-var things = ["thing1", "thing2", "thing3"];
 
-var heckle = ["haha, look at this guy. He likes ", ", what a loser.", "? Really? You like ", "? Hahahaha.", "Ooh, look at me, I'm ", "and I like ",  "' , yeah that's you dude"];
+var heckle = ["haha, look at this guy. <br> He likes ", ", what a loser. Really? <br> You like ", "? <br> Hahahaha. <br> Ooh, look at me, I'm ", "and I like ",  "', <br>  yeah that's you dude"];
 var fullneg = [];
 var twothings = [];
-var personName = $("#name").val();
-
+var things;
+  var personName;
 $(document).ready(function()
 {
+
 
 
 
@@ -15,17 +15,20 @@ $("#resultbutton").click(function(){
 
 
 splice();
-  $("#results").append(things);
+  $("#results").html(fullneg);
 });
 
 });
 function splice()
 {
+    personName = $("#name").val() + " ";
+things = ["thing1", "thing2",  personName, "thing3"];
+
   twothings = things.slice(0, 3);
   console.log(heckle);
   things[0] =  $("#thing1").val();
   things[1] =  $("#thing2").val();
-  things[2] =  $("#thing3").val();
+  things[3] =  $("#thing3").val();
   console.log(things[0]);
   var h=0;
   var t=0;
@@ -47,4 +50,5 @@ function splice()
 
   }
 console.log(fullneg);
+console.log(personName);
 }
